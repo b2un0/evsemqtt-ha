@@ -1,23 +1,18 @@
-name: "EVSE MQTT"
+name: "evseMQTT"
 version: "latest"
 slug: "evsemqtt"
-description: "Home Assistant add-on for EVSE MQTT integration."
+description: "Home Assistant add-on for evseMQTT integration."
 arch:
   - amd64
-  - armv7
-  - armhf
   - aarch64
 url: "https://github.com/moryoav/evsemqtt-ha"
 startup: "services"
 boot: "auto"
 
-# Use the image without a tag, and rely on `version` above:
-image: "ghcr.io/slespersen/evsemqtt"
+#image: "ghcr.io/slespersen/evsemqtt" # TODO change to this if https://github.com/slespersen/evseMQTT/pull/14 was merged
+image: "ghcr.io/b2un0/evsemqtt"
 
-ports:
-  1883/tcp: 1883
-
-options:
+option:
   BLE_ADDRESS: "your_device_mac_address"
   BLE_PASSWORD: "your_6_digit_pin"
   UNIT: "W"
@@ -30,20 +25,13 @@ options:
 
 schema:
   BLE_ADDRESS: str
-  BLE_PASSWORD: str
-  UNIT: str
-  MQTT_ENABLED: str
+  BLE_PASSWORD: int
+  UNIT: list(W|kW)
+  MQTT_ENABLED: list(true|false)
   MQTT_BROKER: str
   MQTT_PORT: int
   MQTT_USER: str
   MQTT_PASSWORD: str
-  LOGGING_LEVEL: str
+  LOGGING_LEVEL: list(DEBUG|INFO|WARNING|ERROR|CRITICAL)
 
-# Instead of privileged: true, use full_access: true if full privileges are needed
-full_access: true
-
-# If you need DBus, consider enabling host_dbus:
-# host_dbus: true
-#
-# And/or host_network if you need it:
-# host_network: true
+host_dbus: true

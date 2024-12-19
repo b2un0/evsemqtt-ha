@@ -21,7 +21,7 @@ options:
   BLE_ADDRESS: "your_device_mac_address"
   BLE_PASSWORD: "your_6_digit_pin"
   UNIT: "W"
-  MQTT_ENABLED: true
+  MQTT_ENABLED: "true"
   MQTT_BROKER: "your_mqtt_broker_address"
   MQTT_PORT: 1883
   MQTT_USER: "your_mqtt_username"
@@ -32,7 +32,7 @@ schema:
   BLE_ADDRESS: str
   BLE_PASSWORD: str
   UNIT: str
-  MQTT_ENABLED: bool
+  MQTT_ENABLED: str
   MQTT_BROKER: str
   MQTT_PORT: int
   MQTT_USER: str

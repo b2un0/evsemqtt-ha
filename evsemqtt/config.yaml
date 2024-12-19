@@ -9,8 +9,8 @@ url: "https://github.com/moryoav/evsemqtt-ha"
 startup: "services"
 boot: "auto"
 
-#image: "ghcr.io/slespersen/evsemqtt" # TODO change to this if https://github.com/slespersen/evseMQTT/pull/14 was merged
-image: "ghcr.io/b2un0/evsemqtt"
+image: "ghcr.io/slespersen/evsemqtt" # TODO change to this if https://github.com/slespersen/evseMQTT/pull/14 was merged
+#image: "ghcr.io/b2un0/evsemqtt"
 
 option:
   BLE_ADDRESS: "your_device_mac_address"

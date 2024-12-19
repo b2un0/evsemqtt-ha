@@ -22,17 +22,6 @@ options:
   mqtt_password: "your_mqtt_password"
   logging_level: "INFO"
 
-environment:
-  BLE_ADDRESS: "{ble_address}"
-  BLE_PASSWORD: "{ble_password}"
-  UNIT: "{unit}"
-  MQTT_ENABLED: "{mqtt_enabled}"
-  MQTT_BROKER: "{mqtt_broker}"
-  MQTT_PORT: "{mqtt_port}"
-  MQTT_USER: "{mqtt_user}"
-  MQTT_PASSWORD: "{mqtt_password}"
-  LOGGING_LEVEL: "{logging_level}"
-
 schema:
   ble_address: str
   ble_password: str
@@ -44,4 +33,5 @@ schema:
   mqtt_password: str
   logging_level: str
 
+mapoptions: true
 host_dbus: true

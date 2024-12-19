@@ -11,7 +11,7 @@ arch:
   - aarch64
 startup: services
 boot: auto
-image: "ghcr.io/slespersen/evsemqtt:latest"
+image: ghcr.io/slespersen/evsemqtt:latest
 
 # If the container exposes ports (MQTT broker port for instance),
 # you can define them here. If you want the add-on to function primarily as a client,

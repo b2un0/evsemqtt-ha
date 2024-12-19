@@ -1,7 +1,7 @@
-name: "EVSE MQTT"
+name: "evseMQTT"
 version: "latest"
 slug: "evsemqtt"
-description: "Home Assistant add-on for EVSE MQTT integration."
+description: "Home Assistant add-on for evseMQTT integration."
 arch:
   - amd64
   - aarch64
@@ -9,40 +9,29 @@ url: "https://github.com/moryoav/evsemqtt-ha"
 startup: "services"
 boot: "auto"
 
-image: "ghcr.io/slespersen/evsemqtt"
+#image: "ghcr.io/slespersen/evsemqtt" # TODO change to this if https://github.com/slespersen/evseMQTT/pull/14 was merged
+image: "ghcr.io/b2un0/evsemqtt"
 
-environment:
-  BLE_ADDRESS: "{ble_address}"
-  BLE_PASSWORD: "{ble_password}"
-  UNIT: "{unit}"
-  MQTT_ENABLED: "{mqtt_enabled}"
-  MQTT_BROKER: "{mqtt_broker}"
-  MQTT_PORT: "{mqtt_port}"
-  MQTT_USER: "{mqtt_user}"
-  MQTT_PASSWORD: "{mqtt_password}"
-  LOGGING_LEVEL: "{logging_level}"
-  
-options:
-  ble_address: "your_device_mac_address"
-  ble_password: "your_6_digit_pin"
-  unit: "W"
-  mqtt_enabled: "true"
-  mqtt_broker: "your_mqtt_broker_address"
-  mqtt_port: 1883
-  mqtt_user: "your_mqtt_username"
-  mqtt_password: "your_mqtt_password"
-  logging_level: "INFO"
+option:
+  BLE_ADDRESS: "your_device_mac_address"
+  BLE_PASSWORD: "your_6_digit_pin"
+  UNIT: "W"
+  MQTT_ENABLED: "true"
+  MQTT_BROKER: "your_mqtt_broker_address"
+  MQTT_PORT: 1883
+  MQTT_USER: "your_mqtt_username"
+  MQTT_PASSWORD: "your_mqtt_password"
+  LOGGING_LEVEL: "INFO"
 
 schema:
-  ble_address: str
-  ble_password: str
-  unit: str
-  mqtt_enabled: str
-  mqtt_broker: str
-  mqtt_port: int
-  mqtt_user: str
-  mqtt_password: str
-  logging_level: str
+  BLE_ADDRESS: str
+  BLE_PASSWORD: int
+  UNIT: list(W|kW)
+  MQTT_ENABLED: list(true|false)
+  MQTT_BROKER: str
+  MQTT_PORT: int
+  MQTT_USER: str
+  MQTT_PASSWORD: str
+  LOGGING_LEVEL: list(DEBUG|INFO|WARNING|ERROR|CRITICAL)
 
-mapoptions: true
 host_dbus: true

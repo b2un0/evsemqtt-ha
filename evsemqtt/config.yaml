@@ -1,0 +1,54 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: EVSE MQTT
+version: "1.0.0"
+slug: evsemqtt
+description: "Home Assistant add-on for EVSE MQTT integration."
+url: "https://github.com/moryoav/evsemqtt-ha"
+arch:
+  - amd64
+  - armv7
+  - armhf
+  - aarch64
+startup: services
+boot: auto
+image: "ghcr.io/slespersen/evsemqtt:latest"
+
+# If the container exposes ports (MQTT broker port for instance),
+# you can define them here. If you want the add-on to function primarily as a client,
+# you may not need this. However, it's shown here as per your original config.
+ports:
+  1883/tcp: 1883
+
+options:
+  BLE_ADDRESS: "your_device_mac_address"
+  BLE_PASSWORD: "your_6_digit_pin"
+  UNIT: "W"
+  MQTT_ENABLED: true
+  MQTT_BROKER: "your_mqtt_broker_address"
+  MQTT_PORT: 1883
+  MQTT_USER: "your_mqtt_username"
+  MQTT_PASSWORD: "your_mqtt_password"
+  LOGGING_LEVEL: "INFO"
+
+schema:
+  BLE_ADDRESS: str
+  BLE_PASSWORD: str
+  UNIT: str
+  MQTT_ENABLED: bool
+  MQTT_BROKER: str
+  MQTT_PORT: int
+  MQTT_USER: str
+  MQTT_PASSWORD: str
+  LOGGING_LEVEL: str
+
+# Security/Host Access Settings:
+# The original docker command mounts /var/run/dbus:/run/dbus, which is not directly supported.
+# If you need this, you may have to run the add-on as privileged and handle the mount inside Dockerfile.
+# For now, we set privileged to true to allow low-level access if needed.
+privileged: true
+host_network: false
+
+# If you do not need host network, leave it false. If you do, set it to true.
+# If you need to map /var/run/dbus, you might need to handle that in Dockerfile or with an init script.
+
+full_access: false

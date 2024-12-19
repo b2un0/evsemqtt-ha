@@ -9,45 +9,39 @@ url: "https://github.com/moryoav/evsemqtt-ha"
 startup: "services"
 boot: "auto"
 
-# Use the image without a tag, and rely on `version` above:
 image: "ghcr.io/slespersen/evsemqtt"
 
 options:
-  BLE_ADDRESS: "your_device_mac_address"
-  BLE_PASSWORD: "your_6_digit_pin"
-  UNIT: "W"
-  MQTT_ENABLED: "true"
-  MQTT_BROKER: "your_mqtt_broker_address"
-  MQTT_PORT: 1883
-  MQTT_USER: "your_mqtt_username"
-  MQTT_PASSWORD: "your_mqtt_password"
-  LOGGING_LEVEL: "INFO"
+  ble_address: "your_device_mac_address"
+  ble_password: "your_6_digit_pin"
+  unit: "W"
+  mqtt_enabled: "true"
+  mqtt_broker: "your_mqtt_broker_address"
+  mqtt_port: 1883
+  mqtt_user: "your_mqtt_username"
+  mqtt_password: "your_mqtt_password"
+  logging_level: "INFO"
 
-# Inject these options as environment variables into the container
 environment:
-  BLE_ADDRESS: {BLE_ADDRESS}
-  BLE_PASSWORD: {BLE_PASSWORD}
-  UNIT: {UNIT}
-  MQTT_ENABLED: {MQTT_ENABLED}
-  MQTT_BROKER: {MQTT_BROKER}
-  MQTT_PORT: {MQTT_PORT}
-  MQTT_USER: {MQTT_USER}
-  MQTT_PASSWORD: {MQTT_PASSWORD}
-  LOGGING_LEVEL: {LOGGING_LEVEL}
-  
-schema:
-  BLE_ADDRESS: str
-  BLE_PASSWORD: str
-  UNIT: str
-  MQTT_ENABLED: str
-  MQTT_BROKER: str
-  MQTT_PORT: int
-  MQTT_USER: str
-  MQTT_PASSWORD: str
-  LOGGING_LEVEL: str
+  BLE_ADDRESS: "{ble_address}"
+  BLE_PASSWORD: "{ble_password}"
+  UNIT: "{unit}"
+  MQTT_ENABLED: "{mqtt_enabled}"
+  MQTT_BROKER: "{mqtt_broker}"
+  MQTT_PORT: "{mqtt_port}"
+  MQTT_USER: "{mqtt_user}"
+  MQTT_PASSWORD: "{mqtt_password}"
+  LOGGING_LEVEL: "{logging_level}"
 
-# If you need DBus, consider enabling host_dbus:
+schema:
+  ble_address: str
+  ble_password: str
+  unit: str
+  mqtt_enabled: str
+  mqtt_broker: str
+  mqtt_port: int
+  mqtt_user: str
+  mqtt_password: str
+  logging_level: str
+
 host_dbus: true
-#
-# And/or host_network if you need it:
-# host_network: true

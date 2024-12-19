@@ -1,14 +1,12 @@
 {
   "name": "EVSE MQTT",
   "version": "1.0.0",
-  "slug": "evse_mqtt",
+  "slug": "evsemqtt",
   "description": "Home Assistant add-on for EVSE MQTT integration.",
+  "arch": ["amd64", "armv7", "armhf", "aarch64"],
   "startup": "services",
   "boot": "auto",
-  "host_network": false,
-  "host_ipc": false,
-  "host_pid": false,
-  "privileged": false,
+  "image": "ghcr.io/slespersen/evsemqtt:latest",
   "ports": {
     "1883/tcp": 1883
   },
@@ -49,12 +47,13 @@
     "config:/data/options.json:ro",
     "/var/run/dbus:/run/dbus"
   ],
-  "schema_recommend": {},
   "ports_description": {
     "1883/tcp": "MQTT Broker Port"
   },
-  "slug": "evse_mqtt",
-  "url": "https://github.com/yourusername/evsemqtt-add-on",
-  "arch": ["amd64", "armv7", "armhf", "aarch64"],
-  "startup_timeout": 60
+  "url": "https://github.com/moryoav/evsemqtt-ha",
+  "startup_timeout": 60,
+  "privileged": false,
+  "host_network": false,
+  "host_ipc": false,
+  "host_pid": false
 }

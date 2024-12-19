@@ -1,0 +1,60 @@
+{
+  "name": "EVSE MQTT",
+  "version": "1.0.0",
+  "slug": "evse_mqtt",
+  "description": "Home Assistant add-on for EVSE MQTT integration.",
+  "startup": "services",
+  "boot": "auto",
+  "host_network": false,
+  "host_ipc": false,
+  "host_pid": false,
+  "privileged": false,
+  "ports": {
+    "1883/tcp": 1883
+  },
+  "schema": {
+    "BLE_ADDRESS": "str",
+    "BLE_PASSWORD": "str",
+    "UNIT": "str",
+    "MQTT_ENABLED": "bool",
+    "MQTT_BROKER": "str",
+    "MQTT_PORT": "int",
+    "MQTT_USER": "str",
+    "MQTT_PASSWORD": "str",
+    "LOGGING_LEVEL": "str"
+  },
+  "environment": {
+    "BLE_ADDRESS": "your_device_mac_address",
+    "BLE_PASSWORD": "your_6_digit_pin",
+    "UNIT": "W",
+    "MQTT_ENABLED": "true",
+    "MQTT_BROKER": "your_mqtt_broker_address",
+    "MQTT_PORT": "1883",
+    "MQTT_USER": "your_mqtt_username",
+    "MQTT_PASSWORD": "your_mqtt_password",
+    "LOGGING_LEVEL": "INFO"
+  },
+  "options": {
+    "BLE_ADDRESS": "your_device_mac_address",
+    "BLE_PASSWORD": "your_6_digit_pin",
+    "UNIT": "W",
+    "MQTT_ENABLED": true,
+    "MQTT_BROKER": "your_mqtt_broker_address",
+    "MQTT_PORT": 1883,
+    "MQTT_USER": "your_mqtt_username",
+    "MQTT_PASSWORD": "your_mqtt_password",
+    "LOGGING_LEVEL": "INFO"
+  },
+  "map": [
+    "config:/data/options.json:ro",
+    "/var/run/dbus:/run/dbus"
+  ],
+  "schema_recommend": {},
+  "ports_description": {
+    "1883/tcp": "MQTT Broker Port"
+  },
+  "slug": "evse_mqtt",
+  "url": "https://github.com/yourusername/evsemqtt-add-on",
+  "arch": ["amd64", "armv7", "armhf", "aarch64"],
+  "startup_timeout": 60
+}

@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: EVSE MQTT Add-on Repository
+url: 'https://github.com/moryoav/evsemqtt-ha'
+maintainer: Yoav Mor <moryoav@gmail.com>

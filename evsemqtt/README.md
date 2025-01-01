@@ -46,6 +46,7 @@ Configure the add-on by providing the required environment variables:
 - **MQTT_USER**: MQTT broker username.
 - **MQTT_PASSWORD**: MQTT broker password.
 - **LOGGING_LEVEL**: Logging level (`DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`).
+- **RSSI**: Monitor Received Signal Strength Indicator (`true` or `false`).
 
 Example configuration:
 
@@ -59,5 +60,6 @@ Example configuration:
 "MQTT_PORT": 1883,
 "MQTT_USER": "mqtt_user",
 "MQTT_PASSWORD": "mqtt_password",
-"LOGGING_LEVEL": "INFO"
+"LOGGING_LEVEL": "INFO",
+"RSSI": true
 }

@@ -28,7 +28,7 @@ Home Assistant add-on for EVSE MQTT integration using the `slespersen/evsemqtt` 
 ### Installing the Add-on
 
 1. Navigate to **Settings** > **Add-ons** > **Add-on Store**.
-2. Find **EVSE MQTT** in the list and click on it.
+2. Find **evseMQTT** in the list and click on it.
 3. Click **Install**.
 4. After installation, navigate to the **Configuration** tab.
 

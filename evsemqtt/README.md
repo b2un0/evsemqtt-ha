@@ -20,15 +20,14 @@ Home Assistant add-on for EVSE MQTT integration using the `slespersen/evsemqtt` 
 ### Adding the Add-on Repository
 
 1. Open Home Assistant.
-2. Navigate to **Supervisor** > **Add-on Store**.
+2. Navigate to **Settings** > **Add-ons** > **Add-on Store**.
 3. Click on the three dots in the top right corner and select **Repositories**.
-4. Add the repository URL where you host this add-on. For example:
-https://github.com/yourusername/evsemqtt-add-on
+4. Add this repository URL: https://github.com/moryoav/evsemqtt-ha
 5. Click **Add**.
 
 ### Installing the Add-on
 
-1. Go to **Supervisor** > **Add-on Store**.
+1. Navigate to **Settings** > **Add-ons** > **Add-on Store**.
 2. Find **EVSE MQTT** in the list and click on it.
 3. Click **Install**.
 4. After installation, navigate to the **Configuration** tab.
